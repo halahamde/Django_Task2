@@ -1,0 +1,45 @@
+{%extends 'navbar.html'%}
+{% load static %}
+{%block content%}
+<div class="text-center">
+    <h2>Search For Student</h2>
+    <form method="post">
+        <div class="container bg-light">
+            {%csrf_token %}
+            <br><br>
+            <label for="name"><b>Enter Student Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" required>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Search</button>
+            <br><br>
+        </div>
+    </form>
+
+    <br><br>
+    <div class="container bg-light ">
+        <div class="row">
+            <div class="col">
+                <h2>Results</h2>
+            </div>
+        </div>
+        <br>
+        {%for student in studs%}
+        <div class="row">
+            <div class="col text-secondary">
+                {{student.id}}
+            </div>
+
+            <div class="col text-secondary ">
+                {{student.name}}
+            </div>
+
+            <div class="col text-secondary">
+                {{student.track}}
+            </div>
+        </div>
+
+        {%endfor%}
+    </div>
+
+</div>
+{%endblock%}

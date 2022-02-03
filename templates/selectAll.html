@@ -1,0 +1,34 @@
+{%extends 'navbar.html'%}
+{% load static %}
+{%block content%}
+<div class="text-center">
+    <div class="container text-center">
+        <h2 class="h2 text-center">Students Data</h2>
+        <br>
+        {%csrf_token %}
+        <div class="row">
+            <div class="col">ID</div>
+            <div class="col">Name</div>
+            <div class="col">Track</div>
+        </div>
+
+        {%for student in studs%}
+
+        <div class="row">
+            <div class="col text-secondary">
+                {{student.id}}
+            </div>
+
+            <div class="col text-secondary ">
+                {{student.name}}
+            </div>
+
+            <div class="col text-secondary">
+                {{student.track}}
+            </div>
+        </div>
+        {%endfor%}
+
+    </div>
+</div>
+{%endblock%}

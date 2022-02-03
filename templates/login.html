@@ -1,0 +1,24 @@
+{%extends 'basicNav.html'%}
+{% load static %}
+{%block content%}
+<div class="text-center">
+    <h2>Log In</h2>
+    <form method="post">
+        <div class="container bg-light">
+            {%csrf_token%}
+            <br><br>
+            <label for="name"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="name" required>
+            <br><br>
+            <label for="password"><b>Password </b></label>
+            <input type="password" placeholder="Enter Your Password" name="password" required>
+            <br><br>
+            <button type="submit" class="btn btn-primary">Log In</button>
+            <br><br>
+        </div>
+    </form>
+    <div style="color:red">
+        {{errormsg}}
+    </div>
+</div>
+{%endblock%}

@@ -1,0 +1,24 @@
+{%extends 'navbar.html'%}
+{% load static %}
+{%block content%}
+<div class="text-center">
+    <h2>Update Student Data!</h2>
+    <form method="post">
+        <div class="container bg-light">
+            {%csrf_token %}
+            <br><br>
+            <label for="name"><b>Enter Student ID you want to Update</b></label>
+            <input type="text" placeholder="Enter ID" name="stdid" required>
+            <br><br>
+            <label for="name"><b>New Student Name</b></label>
+            <input type="text" placeholder="Enter Student Name" name="name" required>
+            <br><br>
+            <label for="track"><b>New Track Name </b></label>
+            <input type="text" placeholder="Enter Student Track" name="track" required>
+            <br><br>
+            <button type="submit" class="btn btn-success">Update</button>
+            <br><br>
+        </div>
+    </form>
+</div>
+{%endblock%}
